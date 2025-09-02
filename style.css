@@ -1,0 +1,267 @@
+/* style.css */
+
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #e0e6ed; /* Light grey/blue background for the entire page */
+    color: #333;
+    display: flex; /* Use flexbox to center main content */
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body takes full viewport height */
+}
+
+/* Main Content Area */
+main {
+    flex-grow: 1; /* Allow main to grow and take available space */
+    width: 100%;
+    max-width: 960px; /* Max width for presentation content */
+    margin: 20px auto; /* Center main content with vertical margin */
+    padding: 0 20px; /* Horizontal padding for responsiveness */
+    box-sizing: border-box; /* Include padding in width calculations */
+}
+
+/* Slide Styles */
+.slide {
+    background-color: #ffffff; /* White background for each slide */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* More prominent shadow for slides */
+    margin-bottom: 40px; /* Space between slides */
+    padding: 40px; /* Generous padding inside each slide */
+    box-sizing: border-box;
+    min-height: 500px; /* Minimum height for a slide, adjust as needed */
+    display: flex; /* Use flexbox for content alignment within slide */
+    flex-direction: column;
+    justify-content: center; /* Center content vertically in slide */
+}
+
+.slide:last-of-type {
+    margin-bottom: 20px; /* Less margin for the last slide before footer */
+}
+
+/* Title Slide Specific Styles */
+.title-slide {
+    text-align: center;
+    background-color: #2c3e50; /* Dark blue background for title slide */
+    color: #fff;
+    padding: 80px 40px; /* More padding for title slide */
+    min-height: 600px; /* Taller title slide */
+}
+
+.title-slide h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.title-slide .author {
+    font-size: 1.5em;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.title-slide .visual-suggestion {
+    font-size: 1.1em;
+    margin-top: 30px;
+    color: #a0a0a0; /* Lighter color for suggestion text */
+}
+
+/* Headings within slides */
+.slide h2 {
+    color: #2c3e50; /* Dark blue/grey for main headings */
+    font-size: 2.2em;
+    border-bottom: 3px solid #3498db; /* Blue underline */
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    text-align: center; /* Center main headings */
+}
+
+.slide h3 {
+    color: #34495e; /* Slightly lighter dark blue/grey for subheadings */
+    font-size: 1.6em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* Paragraph and List Styles */
+.slide p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.slide ul, .slide ol {
+    margin-bottom: 15px;
+    padding-left: 25px;
+    font-size: 1.1em;
+}
+
+.slide li {
+    margin-bottom: 8px;
+}
+
+/* Two-column list for Abbreviations */
+.column-list {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: space-around; /* Distribute items with space */
+    gap: 20px; /* Space between columns */
+}
+
+.column-list ul {
+    flex: 1; /* Allow each ul to take equal space */
+    min-width: 280px; /* Minimum width before wrapping */
+    padding-left: 0; /* Remove default ul padding */
+    list-style: none; /* Remove default bullet points */
+}
+
+.column-list ul li {
+    padding-left: 25px; /* Custom bullet point indentation */
+    position: relative;
+}
+
+.column-list ul li::before {
+    content: '•'; /* Custom bullet point */
+    color: #3498db; /* Blue bullet */
+    position: absolute;
+    left: 0;
+}
+
+
+/* Table Styles */
+.table-container {
+    overflow-x: auto; /* Ensures table is scrollable on small screens if it overflows */
+    margin: 30px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Removes double borders */
+    margin-bottom: 20px;
+    min-width: 600px; /* Ensure table doesn't get too squished */
+}
+
+table th, table td {
+    border: 1px solid #ddd; /* Light grey borders */
+    padding: 12px;
+    text-align: left;
+    vertical-align: top; /* Align content to the top */
+}
+
+table th {
+    background-color: #3498db; /* Blue background for headers */
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+table td {
+    font-size: 0.95em;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Zebra striping for readability */
+}
+
+table tr:hover {
+    background-color: #f1f1f1; /* Highlight row on hover */
+}
+
+/* Chart Styles */
+.chart-container {
+    text-align: center; /* Center the image */
+    margin: 40px 0; /* Spacing above and below chart */
+}
+
+.chart-container img {
+    max-width: 90%; /* Make images responsive, slightly smaller than slide width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below image */
+    margin: 0 auto; /* Center the image */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15); /* More prominent shadow for charts */
+    border-radius: 5px; /* Slightly rounded corners */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto; /* Push footer to the bottom */
+    background-color: #2c3e50; /* Dark blue/grey */
+    color: #fff;
+    font-size: 0.9em;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .slide {
+        padding: 25px;
+        margin-bottom: 30px;
+    }
+
+    .title-slide {
+        padding: 60px 25px;
+    }
+
+    .title-slide h1 {
+        font-size: 2.5em;
+    }
+
+    .title-slide .author {
+        font-size: 1.2em;
+    }
+
+    .slide h2 {
+        font-size: 1.8em;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+    .slide h3 {
+        font-size: 1.4em;
+        margin-top: 20px;
+    }
+
+    .slide p, .slide ul, .slide ol {
+        font-size: 1em;
+    }
+
+    table th, table td {
+        padding: 8px;
+        font-size: 0.85em;
+    }
+
+    .chart-container img {
+        max-width: 100%; /* Allow full width on small screens */
+    }
+
+    .column-list ul {
+        min-width: unset; /* Remove min-width on small screens */
+        width: 100%; /* Take full width */
+    }
+}
+
+/* Further adjustment for very small screens (e.g., mobile portrait) */
+@media (max-width: 480px) {
+    .slide {
+        padding: 15px;
+        min-height: unset; /* Allow height to collapse if content is short */
+    }
+
+    .title-slide h1 {
+        font-size: 2em;
+    }
+
+    .slide h2 {
+        font-size: 1.5em;
+    }
+
+    .slide h3 {
+        font-size: 1.2em;
+    }
+
+    .table-container {
+        margin: 20px 0;
+    }
+}
